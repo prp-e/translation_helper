@@ -1,9 +1,10 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: %i[ show edit update destroy ]
+  before_action :find_project 
 
   # GET /properties or /properties.json
   def index
-    @properties = Property.all
+    @properties = @project.properties
   end
 
   # GET /properties/1 or /properties/1.json
@@ -12,7 +13,7 @@ class PropertiesController < ApplicationController
 
   # GET /properties/new
   def new
-    @property = Property.new
+    @property = @project.properties.build
   end
 
   # GET /properties/1/edit
@@ -21,7 +22,7 @@ class PropertiesController < ApplicationController
 
   # POST /properties or /properties.json
   def create
-    @property = Property.new(property_params)
+    @property = @project.properties.build(property_params)
 
     respond_to do |format|
       if @property.save
@@ -58,6 +59,10 @@ class PropertiesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def find_project 
+      @project = Project.find(params[:project_id])
+    end 
+
     def set_property
       @property = Property.find(params[:id])
     end
