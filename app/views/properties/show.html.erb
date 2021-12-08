@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @property.project_id %>
+</p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @property.label %>
+</p>
+
+<p>
+  <strong>En:</strong>
+  <%= @property.en %>
+</p>
+
+<p>
+  <strong>Fa:</strong>
+  <%= @property.fa %>
+</p>
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>
