@@ -1,0 +1,2 @@
+class JsonOutController < ApplicationController
+end
