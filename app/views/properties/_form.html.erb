@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :project_id %>
-    <%= form.text_field :project_id %>
+    <%= form.text_field :project_id, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :label %>
-    <%= form.text_field :label %>
+    <%= form.text_field :label, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :en %>
-    <%= form.text_area :en %>
+    <%= form.text_area :en, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :fa %>
-    <%= form.text_area :fa %>
+    <%= form.text_area :fa, :class => "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Submit', :class => "btn btn-primary" %>
   </div>
 <% end %>
