@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'untranslated/index'
   resources :projects do 
     resources :properties
   end 
