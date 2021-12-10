@@ -1,2 +1,34 @@
-<h1>Untranslated#index</h1>
-<p>Find me in app/views/untranslated/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Properties</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Project</th>
+        <th>Label</th>
+        <th>En</th>
+        <th>Fa</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @properties.each do |property| %>
+        <tr>
+          <td><%= property.project_id %></td>
+          <td><%= property.label %></td>
+          <td><%= property.en %></td>
+          <td><%= property.fa %></td>
+          <td><%= link_to 'Show', [@project, property], :class =>"text-white btn btn-primary" %></td>
+          <td><%= link_to 'Edit', edit_project_property_path(@project, property) , :class=> "text-white btn btn-primary" %></td>
+          <td><%= link_to 'Destroy', [@project, property], method: :delete, data: { confirm: 'Are you sure?' }, :class => "text-white btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<%= link_to 'New Property', new_project_property_path %>
