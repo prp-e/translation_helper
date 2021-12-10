@@ -40,7 +40,7 @@ class PropertiesController < ApplicationController
   def update
     respond_to do |format|
       if @property.update(property_params)
-        format.html { redirect_to project_properties_path(@project, @property), notice: "Property was successfully updated." }
+        format.html { redirect_to "/projects/#{params[:project_id]}/untranslated", notice: "Property was successfully updated." }
         format.json { render :show, status: :ok, location: @property }
       else
         format.html { render :edit, status: :unprocessable_entity }
